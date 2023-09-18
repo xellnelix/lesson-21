@@ -23,7 +23,7 @@ public class Main {
     public static void multiThreadCalc() {
         double[] array = new double[ARRAY_SIZE];
         for (int i = 0; i < THREADS_NUMBER; i++) {
-            int elemsPerThread = ARRAY_SIZE / 4;
+            int elemsPerThread = ARRAY_SIZE / THREADS_NUMBER;
             int lb = i * elemsPerThread;
             int ub = (i == THREADS_NUMBER - 1) ? (ARRAY_SIZE - 1) : (lb + elemsPerThread - 1);
             new Thread(new Runnable() {
